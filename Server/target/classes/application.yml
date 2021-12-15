@@ -1,0 +1,33 @@
+df:
+  port: 8080
+  url: http://localhost:${df.port}/
+  randomValue: ${random.int}
+
+spring.profiles.active: "two"
+
+---
+
+spring:
+  profiles: one
+strings:
+  names:
+    - Vikor
+    - Evgeny
+    - Pavel
+    - Leonid
+    - Maxim
+
+---
+spring:
+  profiles: two
+strings:
+  names:
+    - Anna
+    - Olga
+    - Larisa
+    - Elisabet
+    - Daria
+---
+terminal:
+  name: 0
+
