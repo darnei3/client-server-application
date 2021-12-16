@@ -1,0 +1,5 @@
+ru\darnei\server\model\User.class
+ru\darnei\server\controller\UserController.class
+ru\darnei\server\UserApplication.class
+ru\darnei\server\repository\UserRepository.class
+ru\darnei\server\service\UserService.class

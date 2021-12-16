@@ -1,16 +1,8 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <JavaCodeStyleSettings>
-      <option name="STATIC_FIELD_NAME_PREFIX" value="darnei" />
-      <option name="PARAMETER_NAME_PREFIX" value="darnei" />
-      <option name="LOCAL_VARIABLE_NAME_PREFIX" value="darnei" />
-      <option name="TEST_NAME_PREFIX" value="darnei" />
-      <option name="SUBCLASS_NAME_PREFIX" value="darnei" />
-      <option name="STATIC_FIELD_NAME_SUFFIX" value="evgen" />
-      <option name="PARAMETER_NAME_SUFFIX" value="evgen" />
-      <option name="LOCAL_VARIABLE_NAME_SUFFIX" value="evgen" />
-      <option name="TEST_NAME_SUFFIX" value="evgen" />
-      <option name="SUBCLASS_NAME_SUFFIX" value="evgen" />
+      <option name="TEST_NAME_SUFFIX" value="" />
+      <option name="SUBCLASS_NAME_SUFFIX" value="" />
     </JavaCodeStyleSettings>
   </code_scheme>
 </component>
