@@ -1,0 +1,70 @@
+GET http://localhost:8080/1
+
+<> 2021-12-14T232126.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T225355.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224945.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224857.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224621.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224535.404.json
+
+###
+
+GET http://localhost:8080/{{userId}}
+
+###
+
+GET http://localhost:8080/{1}
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224524.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224216.404.json
+
+###
+
+GET http://localhost:8080/{1}
+
+###
+
+GET http://localhost:8080/1
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T223535.404.json
+
+###
+
