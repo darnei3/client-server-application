@@ -10,13 +10,18 @@ import ru.darnei.server.repository.UserRepository;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.HashMap;
 
 @Service
 public class UserSerializer {
 
-    private UserRepository userRepository;
+//    private UserRepository userRepository;
+//
+//    public UserSerializer(UserRepository userRepository) {
+//        this.userRepository = userRepository;
+//    }
+//
+//    private HashMap<Integer, User> serializeMap = (HashMap<Integer, User>) userRepository.getStorage();
+//
 
-    public UserSerializer(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 }
