@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "congif",
+      "type": "ru.darnei.server.model.User",
+      "sourceType": "ru.darnei.server.model.User"
+    },
+    {
+      "name": "testclass",
+      "type": "ru.darnei.server.model.TestClass",
+      "sourceType": "ru.darnei.server.model.TestClass"
+    }
+  ],
+  "properties": [
+    {
+      "name": "congif.email",
+      "type": "java.lang.String",
+      "sourceType": "ru.darnei.server.model.User"
+    },
+    {
+      "name": "congif.login",
+      "type": "java.lang.String",
+      "sourceType": "ru.darnei.server.model.User"
+    },
+    {
+      "name": "congif.password",
+      "type": "java.lang.String",
+      "sourceType": "ru.darnei.server.model.User"
+    },
+    {
+      "name": "testclass.count",
+      "type": "java.lang.Integer",
+      "sourceType": "ru.darnei.server.model.TestClass"
+    },
+    {
+      "name": "testclass.list",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "ru.darnei.server.model.TestClass"
+    },
+    {
+      "name": "testclass.thresholds",
+      "type": "java.util.Map<java.lang.String,java.lang.Integer>",
+      "sourceType": "ru.darnei.server.model.TestClass"
+    }
+  ],
+  "hints": []
+}
