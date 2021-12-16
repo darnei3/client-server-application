@@ -1,9 +1,0 @@
-ru\darnei\server\model\TestClass.class
-ru\darnei\server\model\User.class
-ru\darnei\server\config\PropertyConfig.class
-ru\darnei\server\service\UserSerializer.class
-ru\darnei\server\UserApplication.class
-ru\darnei\server\service\UserService.class
-ru\darnei\server\controller\UserController.class
-META-INF\spring-configuration-metadata.json
-ru\darnei\server\repository\UserRepository.class
