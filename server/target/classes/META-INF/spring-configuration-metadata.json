@@ -8,6 +8,11 @@
   ],
   "properties": [
     {
+      "name": "settings.address",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "ru.darnei.server.config.Setting"
+    },
+    {
       "name": "settings.connection",
       "type": "java.util.List<java.lang.String>",
       "sourceType": "ru.darnei.server.config.Setting"

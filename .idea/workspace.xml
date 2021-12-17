@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f37953ee-c6df-4a19-bd50-a63bd7fec79c" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/controller/SettingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/config/PropertyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/config/PropertyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/model/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/config/Setting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/darnei/server/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/Server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/Server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/Server-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/Server-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/config/PropertyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/config/PropertyConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/model/TestClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/ru/darnei/server/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="f37953ee-c6df-4a19-bd50-a63bd7fec79c" name="Default Changelist" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -69,7 +50,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApplication (1)">
+  <component name="RunManager" selected="Spring Boot.UserApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -101,6 +82,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.darnei.server.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.darnei.server.UserApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
