@@ -1,0 +1,168 @@
+POST http://localhost:8080/user
+
+<> 2021-12-17T111254.400.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T104343.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T103920.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T102709.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T102207.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T102107.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+###
+
+GET http://localhost:8080/setting
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T101746.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T101527.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T101240.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T101216.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T101132.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T011453.200.json
+
+###
+
+GET http://localhost:8080/setting
+
+###
+
+GET http://localhost:8080/setting
+
+<> 2021-12-17T011251.200.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T232126.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T225355.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224945.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224857.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224621.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224535.404.json
+
+###
+
+GET http://localhost:8080/{{userId}}
+
+###
+
+GET http://localhost:8080/{1}
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224524.404.json
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T224216.404.json
+
+###
+
+GET http://localhost:8080/{1}
+
+###
+
+GET http://localhost:8080/1
+
+###
+
+GET http://localhost:8080/1
+
+<> 2021-12-14T223535.404.json
+
+###
+

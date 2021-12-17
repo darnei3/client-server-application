@@ -1,49 +1,48 @@
 package ru.darnei.server.controller;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.darnei.server.model.User;
 import ru.darnei.server.service.UserService;
 
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
+
 
     private final UserService service;
     public UserController(UserService service) {
         this.service = service;
     }
 
-    @GetMapping("/getUser/{userId}")
-    public User getUser(@PathVariable Integer userId){
+    @GetMapping
+    public HashMap<Integer, User> all(){
+        return service.getAll();
+    }
+
+    @GetMapping("/{userId}")
+    public User one(@PathVariable Integer userId){
         return service.getUser(userId);
     }
 
-    @GetMapping("/getAll")
-    public HashMap<Integer, User> getAll(){
-        return service.getAll();
-    }
 
-    @PostMapping("/save")
-    public HashMap<Integer, User> save(@RequestBody User user){
+    @PostMapping
+    public User newUser(@RequestBody User user){
         service.save(user);
-        return service.getAll();
+        return user;
     }
 
-    @DeleteMapping("/delete/{userId}")
-    public HashMap<Integer,User> delete(@PathVariable Integer userId){
+    @DeleteMapping("/{userId}")
+    public void delete(@PathVariable Integer userId){
         service.delete(userId);
-        return service.getAll();
     }
 
-    @PostMapping("/update/{userId}")
-    public HashMap<Integer,User> update(@PathVariable Integer userId, @RequestBody User user){
+    @PutMapping("/{userId}")
+    public User update(@RequestBody User user, @PathVariable Integer userId){
         service.update(userId,user);
-        return service.getAll();
+        return service.getUser(userId);
     }
 
 

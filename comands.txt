@@ -1,0 +1,27 @@
+All settings to JSON
+curl -o setting.json http://localhost:8080/setting
+
+All settings
+curl -v http://localhost:8080/setting
+
+Get user by id
+curl -v  http://localhost:8080/user/2
+
+Get all users to JSON
+curl -o user.json http://localhost:8080/user
+
+Get all users 
+curl -v http://localhost:8080/user
+
+Delete user
+curl -X DELETE http://localhost:8080/user/1
+
+Add user
+curl -d "{\"login\":\"test\", \"email\": \"test\", \"password\": \"test\"}" -H "Content-Type: application/json" http://localhost:8080/user
+
+Update user
+curl -X PUT localhost:8080/user/3 -H "Content-type:application/json" -d "{\"login\":\"test\", \"email\": \"test\", \"password\": \"test\"}"
+
+
+
+

@@ -42,8 +42,6 @@ public class UserService {
         repository.getStorage().remove(id);
     }
 
-//    @Value("${file.store.appId}")
-//    Integer integer;
 
     public HashMap<Integer, User> getAll(){
         return (HashMap<Integer, User>) repository.getStorage();

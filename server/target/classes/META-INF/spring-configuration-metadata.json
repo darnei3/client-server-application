@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "settings",
+      "type": "ru.darnei.server.config.Setting",
+      "sourceType": "ru.darnei.server.config.Setting"
+    }
+  ],
+  "properties": [
+    {
+      "name": "settings.connection",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "ru.darnei.server.config.Setting"
+    },
+    {
+      "name": "settings.password",
+      "type": "java.lang.String",
+      "sourceType": "ru.darnei.server.config.Setting"
+    }
+  ],
+  "hints": []
+}
