@@ -2,45 +2,83 @@ package ru.darnei.server.model;
 
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Objects;
 
 
+/**
+ * Класс юзера со свойствами <b>login</b>, <b>email</b> и <b>password</b>.
+ * @autor Evgeny
+ * @version 1.0
+ */
 public class User {
 
+    /** Поле логина */
     private String login;
+
+    /** Поле емейл */
     private String email;
+
+    /** Поле пароля */
     private String password;
 
+    /**
+     * Конструктор - создание объекта класса
+     * @param email емейл
+     * @param login логин
+     * @param password пароль
+     * @see User#User(String, String, String)
+     */
     public User(String login, String email, String password) {
         this.login = login;
         this.email = email;
         this.password = password;
     }
 
+    /**
+     * Функция возвращения поля {@link User#login}
+     * @return возвращает поле логин
+     */
     public String getLogin() {
         return login;
     }
 
+    /**
+     * Процедура определения логина {@link User#login}
+     * @param login логин
+     */
     public void setLogin(String login) {
         this.login = login;
     }
 
+    /**
+     * Функция возвращения поля {@link User#email}
+     * @return возвращает поле емейл
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Процедура определения емейл {@link User#email}
+     * @param email логин
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Функция возвращения поля {@link User#password}
+     * @return возвращает поле пароль
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Процедура определения пароля {@link User#password}
+     * @param password логин
+     */
     public void setPassword(String password) {
         this.password = password;
     }
