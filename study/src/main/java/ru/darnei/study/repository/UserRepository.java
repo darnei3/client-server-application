@@ -1,6 +1,6 @@
-package ru.darnei.server.repository;
+package ru.darnei.study.repository;
 import org.springframework.stereotype.Repository;
-import ru.darnei.server.model.User;
+import ru.darnei.study.model.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,8 @@ public class UserRepository {
         return storage;
     }
 
-    public User getUserForId(Integer userId) {
+    public User getUser(Integer userId) {
+
         return storage.get(userId);
     }
 }

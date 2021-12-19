@@ -1,23 +1,21 @@
-package ru.darnei.server.service;
+package ru.darnei.study.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.darnei.server.model.User;
-import ru.darnei.server.repository.UserRepository;
+import ru.darnei.study.model.User;
+import ru.darnei.study.repository.UserRepository;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
 /**
  * Класс для обработки отправки и получения данных
- * @autor Evgeny
  * @version 1.0
  */
 @Service
 public class UserService {
 
-    /** Поле репозитория */
+    /**
+     * Поле репозитория */
     private final UserRepository repository;
     public UserService(UserRepository repository) {
         this.repository = repository;
@@ -30,7 +28,7 @@ public class UserService {
      * @return возвращает пользователя по указанному id
      */
     public User getUser(Integer userId){
-        User user = repository.getUserForId(userId);
+        User user = repository.getUser(userId);
         if(user == null){
             throw new IllegalArgumentException();
         }
@@ -42,17 +40,18 @@ public class UserService {
      * @param id id пользователя
      * @param user объект с обновленными данными
      */
-    public void update(Integer id, User user){
-        repository.getUserForId(id).setLogin(user.getLogin());
-        repository.getUserForId(id).setEmail(user.getEmail());
-        repository.getUserForId(id).setPassword(user.getPassword());
+    public void updateUser(Integer id, User user){
+        repository.getUser(id).setLogin(user.getLogin());
+        repository.getUser(id).setEmail(user.getEmail());
+        repository.getUser(id).setPassword(user.getPassword());
+
     }
 
     /**
      * Функция добавления в репозиторий объекта {@link User#User}
      * @param user объект добавления в репозиторий
      */
-    public void save(User user){
+    public void saveUser(User user){
         repository.setUserCount(repository.getUserCount()+1);
         repository.getStorage().put(repository.getUserCount(), user);
     }
@@ -61,7 +60,7 @@ public class UserService {
      * Функция удаления из репозитория объекта {@link User#User}
      * @param id id удаляемого юзера
      */
-    public void delete(Integer id){
+    public void deleteUser(Integer id){
         repository.getStorage().remove(id);
     }
 
@@ -69,8 +68,8 @@ public class UserService {
      * Функция получения всех объектов {@link User#User} из репозитория
      * @return возвращает HashMap(Integer, User)
      */
-    public HashMap<Integer, User> getAll(){
-        return (HashMap<Integer, User>) repository.getStorage();
+    public ArrayList<User> getUsers(){
+        return new ArrayList<>(repository.getStorage().values());
     }
 
 }

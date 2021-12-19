@@ -1,23 +1,29 @@
-package ru.darnei.server.config;
+package ru.darnei.study.config;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 import java.util.List;
 import java.util.Map;
 
+
 @ConfigurationProperties(prefix = "settings")
+@ApiModel(value = "Модель setting", description = "Модель setting. Используется для хранения данных загруженных из конфигурационного фалйа")
 public class Setting {
 
+    @ApiModelProperty("Лист подключений")
     private List<String> connection;
 
+    @ApiModelProperty("Карта адрессов и портов подключения")
     private Map<String, String> address;
 
     public Map<String, String> getAddress() {
         return address;
     }
 
-
+    @ApiModelProperty("Пароль подключения")
     private String password;
 
     public String getPassword() {

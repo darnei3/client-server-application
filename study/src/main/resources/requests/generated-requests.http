@@ -1,0 +1,29 @@
+### Получить все настройки
+GET http://localhost:8080/setting
+
+
+### Получить всех user
+GET http://localhost:8080/user
+
+
+### Добавить нового user
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{ "login" : "test", "email": "test", "password": "test"}
+
+
+### Получить данные по userId (значение id можно положить в http-client.env.json или изменить {userId})
+GET http://localhost:8080/user/{{userId}}
+
+
+### Обновить данные по userId (тестовые значения можно положить в http-client.env.json или изменить {userId})
+PUT http://localhost:8080/user/{{userId}}
+Content-Type: application/json
+
+{ "login" : "testPut", "email": "testPut", "password": "testPut"}
+
+
+### Удалить user по userId (тестовые значения можно положить в http-client.env.json или изменить {userId})
+DELETE http://localhost:8080/user/{{userId}}
+

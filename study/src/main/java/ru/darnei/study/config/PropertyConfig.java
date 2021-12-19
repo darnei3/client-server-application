@@ -1,4 +1,4 @@
-package ru.darnei.server.config;
+package ru.darnei.study.config;
 
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

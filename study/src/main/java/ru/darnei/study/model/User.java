@@ -1,25 +1,32 @@
-package ru.darnei.server.model;
+package ru.darnei.study.model;
 
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
 
 /**
  * Класс юзера со свойствами <b>login</b>, <b>email</b> и <b>password</b>.
- * @autor Evgeny
+
  * @version 1.0
  */
+
+@ApiModel(value = "Модель user", description = "Модель user. Используется для хранения данных user")
 public class User {
 
     /** Поле логина */
+    @ApiModelProperty(notes = "Логин user(a)")
     private String login;
 
     /** Поле емейл */
+    @ApiModelProperty(notes = "Емейл user(a)")
     private String email;
 
     /** Поле пароля */
+    @ApiModelProperty(notes = "Пароль user(a)")
     private String password;
 
     /**
@@ -105,4 +112,6 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }
