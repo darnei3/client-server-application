@@ -3,11 +3,14 @@ package ru.darnei.study.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 import ru.darnei.study.model.User;
+import ru.darnei.study.repository.DataStorage;
 import ru.darnei.study.service.UserService;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -16,49 +19,43 @@ import java.util.List;
 @Api("Контрлллер для управления данными User")
 public class UserController {
 
+    UserService userService;
 
-    private final UserService service;
-    public UserController(UserService service) {
-        this.service = service;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping
     @ApiOperation(value = "Получение списка всех записей", response = List.class)
-    public ArrayList<User> getUsers(){
-        return service.getUsers();
+    public List<User> getUsers(){
+        return userService.getAll();
     }
+
+    @PostMapping()
+    @ApiOperation(value = "Создание новой записи или обновление существующей", response = User.class)
+    public User createUser(
+            @ApiParam("Введите параметры добавляемого user(a)")@RequestBody User user){
+        userService.addUser(user);
+        return user;
+    }
+
 
     @GetMapping("/{userId}")
     @ApiOperation(value = "Получение записи", response = User.class)
     public User getUser(
             @ApiParam(value = "Укажите id необходимого вам User", required = true) @PathVariable Integer userId){
-        return service.getUser(userId);
+        return userService.getUser(userId);
     }
 
-
-    @PostMapping
-    @ApiOperation(value = "Создание новой записи", response = User.class)
-    public User createUser(
-            @ApiParam("Введите параметры добавляемого user(a)")@RequestBody User user){
-        service.saveUser(user);
-        return user;
-    }
 
     @DeleteMapping("/{userId}")
     @ApiOperation("Удаление записи")
     public void deleteUser(
             @ApiParam("Введите id user(a) которого вы хотите удалить")@PathVariable Integer userId){
-        service.deleteUser(userId);
+        userService.delete(userId);
     }
 
-    @PutMapping("/{userId}")
-    @ApiOperation(value = "Обновление записи", response = User.class)
-    public User updateUser(
-            @ApiParam("Введите id user(а) данные котрого вы хотите изменить")@PathVariable Integer userId,
-            @ApiParam("Введите параметры для изменения user(a)")@RequestBody User user){
-        service.updateUser(userId,user);
-        return service.getUser(userId);
-    }
+
 
 
 
