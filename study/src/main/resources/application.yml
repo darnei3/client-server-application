@@ -3,13 +3,36 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:file:~/testdep
+    url: jdbc:h2:file:~/base
     user: ""
-
+  boot:
+    admin:
+      client:
+        url: http://localhost:8082
+        instance:
+          name: user-server
   flyway:
-    url: jdbc:h2:file:~/testdep
----
-DATA_STORAGE:
-  SPRING_DATA_STORAGE: false
-  TEMPLATE_STORAGE: false
-  JPA_STORAGE: true
+    url: jdbc:h2:file:~/base
+
+
+logging:
+  file:
+    path: target/study.log
+  level:
+    ru:
+      darnei:
+        study: TRACE
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
+storage:
+  type: spring_data_jdbc

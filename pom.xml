@@ -12,6 +12,7 @@
     <modules>
         <module>study</module>
         <module>receiver</module>
+        <module>spring-boot-admin-server</module>
     </modules>
 
 </project>

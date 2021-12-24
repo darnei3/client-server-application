@@ -1,39 +1,10 @@
-package ru.darnei.study.model;
+package ru.darnei.receiver.model;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.*;
-
-
-@Entity
-@Table(name = "USER")
-@ApiModel(value = "Модель user", description = "Модель user. Используется для хранения данных user")
 public class User {
-
-    @javax.persistence.Id
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(notes = "ID user(a)")
     private Long id;
-
-
-    @Column(name = "LOGIN")
-    @ApiModelProperty(notes = "Логин user(a)")
     private String login;
-
-    @Column(name = "EMAIL")
-    @ApiModelProperty(notes = "Емейл user(a)")
     private String email;
-
-    @Column(name = "PASSWORD")
-    @ApiModelProperty(notes = "Пароль user(a)")
     private String password;
-
-
-    @Column(name = "SALARY")
-    @ApiModelProperty(notes = "Заработная плата user(a)")
     private Integer salary;
 
     public User(Long id, String login, String email, String password, Integer salary) {
