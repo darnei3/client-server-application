@@ -17,7 +17,7 @@ spring:
 
 logging:
   file:
-    path: target/study.log
+    path: logfile.log
   level:
     ru:
       darnei:

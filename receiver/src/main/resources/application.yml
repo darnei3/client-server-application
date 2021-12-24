@@ -8,6 +8,7 @@ spring:
         url: http://localhost:8082
         instance:
           name: user-client
+
 management:
   endpoints:
     web:
@@ -16,3 +17,7 @@ management:
   endpoint:
     health:
       show-details: always
+
+logging:
+  file:
+    path: target/logfile.log
