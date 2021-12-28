@@ -32,12 +32,12 @@ class DataStorageJdbcTemplateImplementation implements DataStorage{
 
     @Override
     public User updateUser(Integer id, User user) {
-        String sql = "SELECT COUNT(*) FROM USER WHERE ID = ?";
+        String sql = "SELECT COUNT(*) FROM usr WHERE id = ?";
         boolean exists = false;
         int count = jdbcTemplate.queryForObject(sql,new Object[]{id}, Integer.class);
         exists = count > 0;
         if(exists) {
-            jdbcTemplate.update("UPDATE USER SET LOGIN=?, EMAIL=?,PASSWORD=?, SALARY=? WHERE ID=?",
+            jdbcTemplate.update("UPDATE USR SET login=?, email=?, password=?, salary=? WHERE id=?",
                     user.getLogin(),
                     user.getEmail(),
                     user.getPassword(),
@@ -53,27 +53,27 @@ class DataStorageJdbcTemplateImplementation implements DataStorage{
 
     @Override
     public List<User> findAllUsers() {
-        List<User> users = jdbcTemplate.query("SELECT * FROM USER", (result, rowNum) -> new User(
-                result.getLong("ID"),
-                result.getString("LOGIN"),
-                result.getString("EMAIL"),
-                result.getString("PASSWORD"),
-                result.getInt("SALARY")));
+        List<User> users = jdbcTemplate.query("SELECT * FROM usr", (result, rowNum) -> new User(
+                result.getLong("id"),
+                result.getString("login"),
+                result.getString("email"),
+                result.getString("password"),
+                result.getInt("salary")));
         return users;
     }
 
     @Override
     public User findByIdUser(Integer id) {
-        User user = jdbcTemplate.queryForObject("SELECT * FROM USER WHERE ID=?", new Object[]{id}, new BeanPropertyRowMapper<>(User.class));
+        User user = jdbcTemplate.queryForObject("SELECT * FROM usr WHERE ID=?", new Object[]{id}, new BeanPropertyRowMapper<>(User.class));
         return user;
     }
 
     @Override
     public User newUser(User user) {
-        String sql = "INSERT INTO USER (LOGIN,EMAIL,PASSWORD,SALARY) VALUES (?,?,?,? )";
+        String sql = "INSERT INTO usr (login,email,password,salary) VALUES (?,?,?,? )";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
-            PreparedStatement ps = connection.prepareStatement(sql, new String[] { "ID" });
+            PreparedStatement ps = connection.prepareStatement(sql, new String[] { "id" });
             ps.setString(1, user.getLogin());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getEmail());
@@ -85,6 +85,6 @@ class DataStorageJdbcTemplateImplementation implements DataStorage{
 
     @Override
     public void deleteUser(Integer id) {
-        jdbcTemplate.update("DELETE FROM USER WHERE ID=?", id);
+        jdbcTemplate.update("DELETE FROM usr WHERE id=?", id);
     }
 }

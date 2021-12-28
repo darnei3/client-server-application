@@ -42,7 +42,7 @@ private final UserClient userClient;
         return userClient.getUser(userId);
     }
 
-    @PutMapping("/put")
+    @PutMapping()
     public User updateUser(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "login") String login,

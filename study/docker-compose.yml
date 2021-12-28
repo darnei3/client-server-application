@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    restart: always
+    build: .
+    command: ["java","-jar","/app.jar"]
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/study
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 8080:8080
+    container_name: study
+
+  db:
+    image: dbreedt/postgres-11-postgis
+    ports:
+      - 5432:5432
+    volumes:
+      - ./storage/postgresql:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=study
+    container_name: study_db

@@ -1,10 +1,14 @@
 spring:
-  h2:
-    console:
-      enabled: true
   datasource:
-    url: jdbc:h2:file:~/base
-    user: ""
+    url: jdbc:postgresql://localhost:5432/study
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
   boot:
     admin:
       client:
@@ -12,7 +16,10 @@ spring:
         instance:
           name: user-server
   flyway:
-    url: jdbc:h2:file:~/base
+    url: jdbc:postgresql://localhost:5432/study
+    user: postgres
+    password: postgres
+    enabled: true
 
 
 logging:
@@ -37,5 +44,5 @@ management:
 
 
 storage:
-  type: spring_data_jdbc
+  type: jpa
 

@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "USER")
+@Table(name = "usr")
 @ApiModel(value = "Модель user", description = "Модель user. Используется для хранения данных user")
 public class User {
 
@@ -19,20 +19,20 @@ public class User {
     private Long id;
 
 
-    @Column(name = "LOGIN")
+    @Column(name = "login")
     @ApiModelProperty(notes = "Логин user(a)")
     private String login;
 
-    @Column(name = "EMAIL")
+    @Column(name = "email")
     @ApiModelProperty(notes = "Емейл user(a)")
     private String email;
 
-    @Column(name = "PASSWORD")
+    @Column(name = "password")
     @ApiModelProperty(notes = "Пароль user(a)")
     private String password;
 
 
-    @Column(name = "SALARY")
+    @Column(name = "salary")
     @ApiModelProperty(notes = "Заработная плата user(a)")
     private Integer salary;
 
