@@ -1,6 +1,8 @@
 package ru.darnei.study.repository;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import ru.darnei.study.exception.ResourceNotFoundException;
 import ru.darnei.study.model.User;
 
 import java.util.List;
@@ -8,13 +10,13 @@ import java.util.List;
 @Repository
 public interface DataStorage {
 
-     User updateUser(Integer id, User user);
+     ResponseEntity<User> updateUser(Long id, User user) throws ResourceNotFoundException;
 
      List<User> findAllUsers();
 
-     User findByIdUser(Integer id);
+     ResponseEntity<User> findByIdUser(Long id) throws ResourceNotFoundException;
 
-     User newUser(User user);
+     ResponseEntity<User> newUser(User user);
 
-     void deleteUser(Integer id);
+     void deleteUser(Long id) throws ResourceNotFoundException;
 }

@@ -6,4 +6,6 @@ import ru.darnei.study.model.User;
 
 @Repository
 public interface SpringDataJdbcImplementation extends CrudRepository<User,Long> {
+
+
 }

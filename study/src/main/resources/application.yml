@@ -1,12 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/study
+    url: jdbc:postgresql://localhost:54321/study
     username: postgres
     password: postgres
   jpa:
     show-sql: false
-    hibernate:
-      ddl-auto: validate
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: false
   boot:

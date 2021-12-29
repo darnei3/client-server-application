@@ -3,10 +3,13 @@ package ru.darnei.study.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.darnei.study.exception.ResourceNotFoundException;
 import ru.darnei.study.model.User;
 import ru.darnei.study.service.UserService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -29,7 +32,7 @@ public class UserController {
 
     @PostMapping()
     @ApiOperation(value = "Создание новой записи", response = User.class)
-    public User newUser(
+    public ResponseEntity<User> newUser(
             @ApiParam("Введите логин добавляемого user(a)")
             @RequestParam(value = "login") String login,
             @ApiParam("Введите емейл добавляемого user(a)")
@@ -44,26 +47,23 @@ public class UserController {
 
     @GetMapping("/{userId}")
     @ApiOperation(value = "Получение записи", response = User.class)
-    public User getUser(
-            @ApiParam(value = "Укажите id необходимого вам User", required = true) @PathVariable Integer userId){
+    public ResponseEntity<User> getUser(
+            @ApiParam(value = "Укажите id необходимого вам User", required = true) @PathVariable Long userId) throws ResourceNotFoundException{
         return userService.getUser(userId);
     }
 
-    @PutMapping()
-    public User updateUser(
-            @RequestParam(value = "id") Integer id,
-            @RequestParam(value = "login") String login,
-            @RequestParam(value = "email") String email,
-            @RequestParam(value = "password") String password,
-            @RequestParam(value = "salary") Integer salary){
-        User user = new User(login,email,password, salary);
-        return userService.updateUser(id, user);
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser (
+            @PathVariable(value = "id") Long id,
+            @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
+        return userService.updateUser(id, userDetails);
     }
+
 
     @DeleteMapping("/{userId}")
     @ApiOperation("Удаление записи")
     public void deleteUser(
-            @ApiParam("Введите id user(a) которого вы хотите удалить")@PathVariable Integer userId){
+            @ApiParam("Введите id user(a) которого вы хотите удалить")@PathVariable Long userId) throws ResourceNotFoundException{
         userService.delete(userId);
     }
 

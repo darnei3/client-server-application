@@ -3,11 +3,12 @@ package ru.darnei.study.repository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import ru.darnei.study.exception.ResourceNotFoundException;
 import ru.darnei.study.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 @ConditionalOnProperty(value = "storage.type", havingValue = "jpa")
@@ -27,13 +28,15 @@ public class DataStorageJpaImplementation implements DataStorage{
     }
 
     @Override
-    public User updateUser(Integer id, User user) {
-        if (jpaImplementation.existsById(id.longValue())) {
-            User userReturn = new User(id.longValue(), user.getLogin(), user.getEmail(), user.getPassword(), user.getSalary());
-            return jpaImplementation.save(userReturn);
-        }
-        logger.info("Update failed, user with id({}) is not exist", id);
-        return null;
+    public ResponseEntity<User> updateUser(Long id, User userDetails) throws ResourceNotFoundException {
+        User user = jpaImplementation.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + id));
+        user.setEmail(userDetails.getEmail());
+        user.setLogin(userDetails.getLogin());
+        user.setPassword(userDetails.getPassword());
+        user.setSalary(userDetails.getSalary());
+        final User updatedUser = jpaImplementation.save(user);
+        return ResponseEntity.ok(updatedUser);
     }
 
     @Override
@@ -42,20 +45,22 @@ public class DataStorageJpaImplementation implements DataStorage{
     }
 
     @Override
-    public User findByIdUser(Integer id) {
-        Optional<User> user = jpaImplementation.findById(Long.valueOf(id));
-        User returnUser = user.get();
-        return returnUser;
+    public ResponseEntity<User> findByIdUser(Long id) throws ResourceNotFoundException {
+        User user = jpaImplementation.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + id));
+        return ResponseEntity.ok(user);
     }
 
     @Override
-    public User newUser(User user) {
+    public ResponseEntity<User> newUser(User user) {
         jpaImplementation.save(user);
-        return user;
+        return ResponseEntity.ok(user);
     }
 
     @Override
-    public void deleteUser(Integer id) {
-        jpaImplementation.deleteById(Long.valueOf(id));
+    public void deleteUser(Long id) throws ResourceNotFoundException{
+        jpaImplementation.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + id));
+        jpaImplementation.deleteById(id);
     }
 }

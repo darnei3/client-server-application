@@ -36,15 +36,16 @@ public class User {
     @ApiModelProperty(notes = "Заработная плата user(a)")
     private Integer salary;
 
-    public User(Long id, String login, String email, String password, Integer salary) {
-        this.id = id;
+
+    public User(String login, String email, String password, Integer salary) {
         this.login = login;
         this.email = email;
         this.password = password;
         this.salary = salary;
     }
 
-    public User(String login, String email, String password, Integer salary) {
+    public User(Long id, String login, String email, String password, Integer salary) {
+        this.id = id;
         this.login = login;
         this.email = email;
         this.password = password;

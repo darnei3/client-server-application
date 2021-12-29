@@ -5,4 +5,6 @@ import ru.darnei.study.model.User;
 
 public interface JpaImplementation extends JpaRepository<User,Long> {
 
+
+
 }
